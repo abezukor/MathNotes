@@ -3,13 +3,16 @@
     import katex from 'katex';
     import TexMath from 'markdown-it-texmath';
     
-    let md = new MarkdownIt().use(TexMath, { engine: katex,
+    let md = new MarkdownIt(
+        "commonmark", {
+            "html": true
+        }
+    ).use(TexMath, { engine: katex,
         delimiters: 'dollars',
         katexOptions: { 
             macros: {"\\RR": "\\mathbb{R}"}, 
             output:"mathml"
         } } );
-    console.log(md);
     
     export let markdown: string = '';
 

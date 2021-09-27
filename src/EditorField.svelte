@@ -4,20 +4,25 @@
     import MathQuillCell from './MathQuillCell.svelte';
 	import TextInput from './TextInput.svelte';
 
-    export let block: EditorBlock= null;
+    export let block: EditorBlock;
 
     export let destroy: (id: number) => void;
 
 </script>
-
-<div>
-    {#if block instanceof MarkdownBlock}
-        <TextInput bind:block={block} />
-    {:else if block instanceof MathBlock}
-        <MathQuillCell bind:block={block}/>
-    {/if}
-    <button on:click={destroy(block.id)}>X</button>
-</div>
+{#if block instanceof EditorBlock}
+    <div>
+        {#if block instanceof MarkdownBlock}
+            <TextInput bind:block={block} />
+        {:else if block instanceof MathBlock}
+            <MathQuillCell bind:block={block}/>
+        {:else}
+            <p>Error Block Type Not found</p>
+        {/if}
+        <button on:click={destroy(block.id)}>X</button>
+    </div>
+{:else}
+    <p>Moving Block</p>
+{/if}
 <style>
     div {
         margin-bottom: 2px;
