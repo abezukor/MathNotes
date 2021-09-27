@@ -117,15 +117,19 @@
 		width: 50%;
 		min-width: 20%;
 		max-width: 80%;
-		overflow: auto;
 		border-right: 1px solid;
 	}
 	#PreviewList {
 		border-left: 1px solid;
+		overflow-y: scroll;
+		width: 50%;
 	}
 	.columns {
 		display: flex;
 		flex-direction: row;
+	}
+	.displayColumn {
+		overflow: auto;
 	}
 	.fillSpace {
 		width: 100%;
@@ -135,7 +139,7 @@
 	.rows{
 		display: flex;
 		flex-direction: column;
-		height: 96%;
+		height: 95%;
 	}
 	a.linkBtn {
 		-webkit-appearance: button;
