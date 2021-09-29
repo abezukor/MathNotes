@@ -5,3 +5,9 @@ This app is built using [Svelte](https://svelte.dev/). To get up and running run
 ```bash
 npm run dev
 ```
+## Deploying
+To deploy run
+```bash
+npm run deploy
+```
+This will update the `gh-pages` branch with the newly compiled site.
