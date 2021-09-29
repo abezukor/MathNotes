@@ -1,8 +1,0 @@
-/node_modules/
-# /public/build/ We want the public folder on the pages branch
-.vscode/
-
-gh-pages.ts
-
-package-lock.json
-.DS_Store
