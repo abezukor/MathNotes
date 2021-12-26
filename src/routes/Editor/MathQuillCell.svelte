@@ -1,10 +1,14 @@
-<script>
-    import MathQuill from "mathquill-jquery"
-    import { onMount } from 'svelte';
-    import "../node_modules/mathquill/build/mathquill.css"
-    import {EditorBlock, MarkdownBlock, MathBlock} from './blockTypes';
+<script context="module" lang="ts">
+	export const prerender = false;
+</script>
 
-    export let block;
+<script lang="ts">
+    import { onMount } from 'svelte';
+    import MathQuill from "mathquill-jquery"
+    import "../../../node_modules/mathquill/build/mathquill.css"
+    import type {EditorBlock, MarkdownBlock, MathBlock} from './blockTypes';
+
+    export let block: MathBlock;
     let boxID = "MathSpan" + block.id;
 
     let MQ = MathQuill.getInterface(2);

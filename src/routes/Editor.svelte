@@ -1,8 +1,8 @@
 <script>
 	import { flip } from 'svelte/animate';
-	import {getClassFromObject, MathBlock, MarkdownBlock, NotesState} from './blockTypes';
-	import EditorField from './EditorField.svelte';
-	import MarkdownDisplay from './MarkdownDisplay.svelte';
+	import {getClassFromObject, MathBlock, MarkdownBlock, NotesState} from './Editor/blockTypes';
+	import EditorField from './Editor/EditorField.svelte';
+	import MarkdownDisplay from './Editor/MarkdownDisplay.svelte';
 	import {dndzone} from 'svelte-dnd-action';
 
 	const flipDurationMs = 300;
@@ -102,7 +102,7 @@
 		</div>
 		<div id="PreviewList" class="displayColumn">
 			<a class ="linkBtn" href={'data:text/plain;charset=utf-8,' + encodeURIComponent(mdCombined)}
-			download={name + ".md"}>
+			download={state.name + ".md"}>
 				Save Markdown File
 			</a>
 			<h1>Rendered Output</h1>
@@ -125,6 +125,7 @@
 		width: 50%;
 	}
 	.columns {
+		flex-grow: 1;
 		display: flex;
 		flex-direction: row;
 	}
